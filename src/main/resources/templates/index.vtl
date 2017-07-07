@@ -1,0 +1,21 @@
+<!--index.vtl-->
+<h1>Startup Team Tracker</h1>
+
+#if ($member)
+  <p>Current member: <strong>$member.getName()</strong> of </strong>$member.getOrganization()</strong></p>
+#else
+  <p>No members!</p>
+#end
+
+<p>Add a new Member:</p>
+
+<form action="/members" method="post">
+  <label for="name">Member Name</label>
+  <input id="name" name="name" type="text"><br />
+
+  <label for="organization">Member organization</label>
+  <input id="organization" name="organization" type="text">
+
+  <button type="submit" class="btn btn-default">Add member</button>
+</form>
+<!--index.vtl-->

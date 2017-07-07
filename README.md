@@ -24,6 +24,7 @@ team-tracker
     │   └── resources
     │       └── templates
     │           └── layout.vtl
+    │           ├── index.vtl
     └── test
         └── java
             ├── MemberTest.java
