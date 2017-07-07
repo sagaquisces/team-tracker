@@ -3,8 +3,36 @@
   <head>
     <title>Startup Team Tracker</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <style>
+    body {
+        background: #555;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+    }
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }
+}
+    </style>
   </head>
   <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <span class="navbar-brand">Team Tracker</span>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="/teams/new">ADD Team</a></li>
+        <li><a href="/teams">VIEW Teams</a></li>
+      </ul>
+    </div>
+  </nav>
   <!--begin main template-->
     <div class="container">
       #parse( $template )
