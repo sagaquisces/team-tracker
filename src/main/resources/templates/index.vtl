@@ -1,11 +1,20 @@
 <!--index.vtl-->
 <h1>Startup Team Tracker</h1>
 
-#if ($member)
-  <p>Current member: <strong>$member.getName()</strong> of </strong>$member.getOrganization()</strong></p>
-#else
-  <p>No members!</p>
+#if ($mostRecentMember)
+  <p>Recently Added: <strong>$mostRecentMember.getName()</strong> of <strong>$mostRecentMember.getOrganization()</strong></p>
 #end
+
+#if ($members)
+  <ul>
+    #foreach ($member in $members)
+      <li><strong>$member.getName()</strong> of <strong>$member.getOrganization()</strong></li>
+    #end
+  </ul>
+#else
+  <p>No Members!</p>
+#end
+
 
 <p>Add a new Member:</p>
 
