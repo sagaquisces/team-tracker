@@ -42,6 +42,7 @@ public class App {
       String organization = request.queryParams("organization");
 
       Member newMember = new Member(name, organization);
+      newMember.setTeamName(team.getName());
 
       team.addMember(newMember);
 

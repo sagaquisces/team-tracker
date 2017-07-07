@@ -50,4 +50,11 @@ public class MemberTest {
     assertEquals(Member.find(secondMember.getId()), secondMember);
   }
 
+  @Test
+  public void setTeam_setsMemberWithTeamName_blueTeam() {
+    Member testMember = new Member("Michael Dunlap", "Spark");
+    testMember.setTeamName("blueTeam");
+    assertEquals("blueTeam", testMember.getTeamName());
+  }
+
 }

@@ -6,6 +6,7 @@ public class Member {
   private String mOrganization;
   private static List<Member> instances = new ArrayList<Member>();
   private int mId;
+  private String mTeamName;
 
   public Member(String name, String organization) {
     mName = name;
@@ -36,5 +37,13 @@ public class Member {
 
   public static Member find(int id) {
     return instances.get(id - 1);
+  }
+
+  public void setTeamName (String teamName){
+    mTeamName = teamName;
+  }
+
+  public String getTeamName (){
+    return mTeamName;
   }
 }

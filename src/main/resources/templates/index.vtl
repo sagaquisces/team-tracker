@@ -2,7 +2,7 @@
 <h1>Welcome to the Startup Team Tracker</h1>
 
 #if ($mostRecentMember)
-  <p>Recently Added: <strong>$mostRecentMember.getName()</strong> of <strong>$mostRecentMember.getOrganization()</strong></p>
+  <p><strong>$mostRecentMember.getName()</strong> of <strong>$mostRecentMember.getOrganization() was just added to $mostRecentMember.getTeamName() team.</strong></p>
 #end
 
 <a href="/teams/new">Add a new team</a>
