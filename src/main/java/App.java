@@ -63,12 +63,24 @@ public class App {
     post("/teams", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
-      Team newTeam = new Team(name);
+      List<Team> allTeams = Team.all();
+      boolean isDuplicate = false;
+      for(Team t:allTeams) {
+        if (t.getName().equals(name)) {
+          isDuplicate = true;
+        }
+      }
 
-      request.session().attribute("mostRecentTeam", newTeam);
+      if (isDuplicate) {
+        model.put("name",name);
+        model.put("template","templates/team-duplicate.vtl");
+      } else {
+        Team newTeam = new Team(name);
+        request.session().attribute("mostRecentTeam", newTeam);
+        model.put("mostRecentTeam", newTeam);
+        model.put("template", "templates/team-success.vtl");
+      }
 
-      model.put("mostRecentTeam", newTeam);
-      model.put("template", "templates/team-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
