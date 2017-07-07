@@ -27,7 +27,12 @@ team-tracker
     │           ├── layout.vtl
     │           ├── member-form.vtl
     │           ├── members.vtl
-    │           └── success.vtl
+    │           ├── success.vtl
+    │           ├── team-duplicate.vtl
+    │           ├── team-form.vtl
+    │           ├── team-success.vtl
+    │           ├── team.vtl
+    │           └── teams.vtl
     └── test
         └── java
             ├── MemberTest.java
