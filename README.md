@@ -11,22 +11,23 @@ Within the repository you'll find the following directories and files:
 
 ```
 team-tracker
+├── README.md
 ├── build.gradle
 ├── .gitignore
 └── src
     ├── main
     │   ├── java
     │   │   ├── App.java
-    │   │   ├── Team.java
     │   │   ├── Member.java
+    │   │   ├── Team.java
     │   │   └── VelocityTemplateEngine.java
     │   └── resources
     │       └── templates
     │           └── layout.vtl
     └── test
         └── java
-            ├── TeamTest.java
-            └── MemberTest.java
+            ├── MemberTest.java
+            └── TeamTest.java
 ```
 
 
