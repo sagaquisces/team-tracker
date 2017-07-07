@@ -21,4 +21,33 @@ public class MemberTest {
     assertEquals("Spark", myMember.getOrganization());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfMember_true() {
+    Member firstMember = new Member("Michael Dunlap", "Spark");
+    Member secondMember = new Member("Trey Walker", "Independence");
+    assertEquals(true, Member.all().contains(firstMember));
+    assertEquals(true, Member.all().contains(secondMember));
+  }
+
+  @Test
+  public void clear_emptiesAllMembersFromArrayList_0() {
+    Member myMember = new Member("Michael Dunlap", "Spark");
+    Member.clear();
+    assertEquals(0, Member.all().size());
+  }
+
+  @Test
+  public void getId_membersInstantiateWithAnID_1() {
+    Member.clear();  // Remember, the test will fail without this line! We need to empty leftover Tasks from previous tests!
+    Member myMember = new Member("Michael Dunlap", "Spark");
+    assertEquals(1, myMember.getId());
+  }
+
+  @Test
+  public void find_returnsMemberWithSameId_secondTask() {
+    Member firstMember = new Member("Michael Dunlap", "Spark");
+    Member secondMember = new Member("Trey Walker", "Independence");
+    assertEquals(Member.find(secondMember.getId()), secondMember);
+  }
+
 }

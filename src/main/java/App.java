@@ -20,6 +20,19 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("members/new", (request, response) -> {
+     Map<String, Object> model = new HashMap<String, Object>();
+     model.put("template", "templates/member-form.vtl");
+     return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/members", (request, response) -> {
+     Map<String, Object> model = new HashMap<String, Object>();
+     model.put("members", Member.all());
+     model.put("template", "templates/members.vtl");
+     return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     post("/members", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 

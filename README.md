@@ -23,8 +23,11 @@ team-tracker
     │   │   └── VelocityTemplateEngine.java
     │   └── resources
     │       └── templates
-    │           └── layout.vtl
     │           ├── index.vtl
+    │           ├── layout.vtl
+    │           ├── member-form.vtl
+    │           ├── members.vtl
+    │           └── success.vtl
     └── test
         └── java
             ├── MemberTest.java
